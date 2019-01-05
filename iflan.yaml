@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: iflan
+  name: iflan
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iflan
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: iflan
+    spec:
+      containers:
+      - image: iflan7744/jenkins-pipeline:8 
+        name: jenkins-pipeline
+        resources: {}
+status: {}
