@@ -1,4 +1,4 @@
-def CONTAINER_NAME="jenkins-pipeline"
+def CONTAINER_NAME="New-jenkins-pipeline"
 def CONTAINER_TAG="${env.BUILD_NUMBER}"
 def DOCKER_HUB_USER="iflan7744"
 def HTTP_PORT="8090"
