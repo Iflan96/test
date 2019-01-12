@@ -55,6 +55,8 @@ def pushToImage(containerName, CONTAINER_TAG, dockerUser, dockerPassword){
     sh "docker login -u $dockerUser -p $dockerPassword"
     sh "docker tag $containerName:$CONTAINER_TAG $dockerUser/$containerName:$CONTAINER_TAG"
     sh "docker push $dockerUser/$containerName:$CONTAINER_TAG"
+    sh "docker tag $containerName:$CONTAINER_TAG $dockerUser/$containerName:latest"
+    sh "docker push $dockerUser/$containerName:latest"
     echo "Image push complete"
 }
 
