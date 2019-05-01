@@ -60,9 +60,3 @@ def pushToImage(containerName, CONTAINER_TAG, dockerUser, dockerPassword){
     echo "Image push complete"
 }
 
-def runApp(containerName, CONTAINER_TAG, dockerHubUser, httpPort){
-    sh "docker pull $dockerHubUser/$containerName"
-    sh "helm upgrade test11 /root/test/mychart/ --set image.tag=$CONTAINER_TAG"
-    sh "helm ls"
-    echo "Application started on port: ${httpPort} (http)"
-}
